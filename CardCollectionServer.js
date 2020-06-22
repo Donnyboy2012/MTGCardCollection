@@ -29,6 +29,13 @@ app.get('/',function(req,res){ res.render('home'); });
 
 app.listen(3000,function(){ console.log('Server litsening'); });
 
+async function getAllCards(req,res){
+	var allCards = Card;
+	let theseCards = await allCards.find();
+	res.json(theseCards);
+}
+app.get('/cardGather/', jsonParser, getAllCards);
+
 async function insertCard(req,res){
 	const filter = {name: req.body.name};
 	var theCard = Card;
