@@ -1,2 +1,2 @@
-const viewContainer = document.querySelector('#CardAdder');
-const cardAddView = new newCards(viewContainer);
+const viewContainer = document.querySelector('#CardList');
+const cardAddView = new cards(viewContainer);
