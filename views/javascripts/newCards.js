@@ -27,10 +27,8 @@ class newCards{
       },
       body: JSON.stringify(params)
     };
-
     const result = await fetch('/cardInsert', fetchOptions);
     const json = await result.json();
     console.log('json: ' + json);
-
   }
 }
