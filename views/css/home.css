@@ -12,6 +12,10 @@ form {
 h1{
 	width: 100%;
 }
+td{
+  height: 40px;
+  width: 25%;
+}
 .btn{
   border-color: blue;
   margin: 0px;
@@ -33,5 +37,5 @@ h1{
   padding:5px .5% 5px .5%;
   background-color: blue;
   width: 99%;
-  height: 200px;
+  height: 260px;
 }

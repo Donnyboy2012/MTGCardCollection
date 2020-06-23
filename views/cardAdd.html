@@ -3,11 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Card Collection</title>
-
+    <script src="javascripts/newCards.js"></script>
+    <script src="javascripts/cardAddView.js"></script>
     <link rel="stylesheet" href="/css/home.css">
 
   </head>
   <body>
+    <section id="CardAdder">
       <h1>Card add</h1>
       <div class="nav-bar">
         <a href="/"><button class="btn">Home</button></a>
@@ -17,7 +19,35 @@
          <a href="/newDeck"><button class="btn">Create Deck</button></a>
       </div>
       <div class="display">
-        <a>Card entry</a>
+        <form>
+          <table>
+            <tr>
+              <td>ScryFall Link:</td>
+              <td><input id="ScryFall" value="" type="text"></td>
+            </tr>
+            <tr>
+              <td>Rarity:</td>
+              <td><select id="Rarity">
+                    <option value="common">Common</option>
+                    <option value="uncommon">Uncommon</option>
+                    <option value="rare">Rare</option>
+                    <option value="mythicRare">Mythic Rare</option>
+                  </select>
+                </td>
+            </tr>
+            <tr>
+              <td>Quantity:</td>
+              <td><input type="number" id="Qty" min="1" max="100"></td>
+            </tr>
+            <tr>
+              <td>Card Name:</td>
+              <td><input id="CardName" value="" type="text"></td>
+            </tr>
+            <tr>
+              <td colspan="2"><button onclick="cardAddView.enterNewCard()">Add Card</button></td>
+          </table>
+        </form>
       </div>
+    </section>
   </body>
 </html>
