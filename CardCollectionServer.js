@@ -37,6 +37,12 @@ async function getAllCards(req,res){
 app.get('/cardGather/', jsonParser, getAllCards);
 
 async function insertCard(req,res){
+
+	var name = req.body.name.trim();
+	var Scryfall = req.body.Scry.trim();
+	var rarity = req.body.rarity;
+	var qty = req.body.qty;
+
 	const filter = {name: req.body.name};
 	var theCard = Card;
 	let thisCard = await theCard.findOne(filter);
@@ -44,10 +50,10 @@ async function insertCard(req,res){
 	if (thisCard === null){
 		console.log('New Card being added.');
 		thisCard = new Card ({
-			name: req.body.name,
-			Scryfall: req.body.Scry,
-			rarity: req.body.rarity,
-			qty: req.body.qty
+			name: name,
+			Scryfall: Scryfall,
+			rarity: rarity,
+			qty: qty
 		}).save().then((newCard) => {
 			console.log('new Card: ' + newCard);
 			res.json(newCard);
@@ -64,3 +70,8 @@ async function insertCard(req,res){
 	}
 }
 app.post('/cardInsert', jsonParser, insertCard);
+
+
+async function myTrim(x){
+	return x.replace(/^\s+|\s+$/gm,'');
+}
