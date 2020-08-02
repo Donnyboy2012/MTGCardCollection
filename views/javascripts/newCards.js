@@ -11,7 +11,8 @@ class newCards{
     const scryfallN = document.getElementById('ScryFall').value;
     const qtyN = document.getElementById('Qty').value;
     const rarityN = document.getElementById('Rarity').value;
-    console.log('name: '+ name);
+    
+    console.log('name: '+ nameN);
     const params = {
       name: nameN,
 			Scry: scryfallN,
